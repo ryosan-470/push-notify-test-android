@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 String token = FirebaseInstanceId.getInstance().getToken();
 
                 TextView textView = (TextView) findViewById(R.id.device_token_view);
+                Log.d(TAG, "Device Token: " + token);
                 textView.setText(token);
             }
         });
