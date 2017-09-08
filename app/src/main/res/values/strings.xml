@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">push-notify-test</string>
     <string name="device_token">A device token does not exist.</string>
+    <string name="msg_subscribed">A news topic is subscribed.</string>
+    <string name="msg_unsubscribed">A news topic is unsubscribed.</string>
 </resources>

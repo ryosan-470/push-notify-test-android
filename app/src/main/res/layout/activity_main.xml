@@ -15,11 +15,18 @@
         android:text="get device token" />
 
     <Button
-        android:id="@+id/subscribe_topic"
+        android:id="@+id/subscribe_topic_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Subscribe a topic" />
+
+    <Button
+        android:id="@+id/unsubscribe_topic_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Unsubscribe a topic" />
 
     <TextView
         android:id="@+id/device_token_view"
