@@ -1,5 +1,5 @@
 # Push Notification Sample App for Android with Firebase Cloud Messaging
-[![license](https://img.shields.io/github/license/ryosan-470/push-notify-test.svg?style=flat-square)](https://github.com/ryosan-470/push-notify-test/blob/master/LICENSE.md)
+[![license](https://img.shields.io/github/license/ryosan-470/push-notify-test-android.svg?style=flat-square)](https://github.com/ryosan-470/push-notify-test-android/blob/master/LICENSE.md)
 
 This application is push notification sample for Android with [Firebase Cloud Messaging (FCM)](https://firebase.google.com/docs/cloud-messaging/). Feel free to use this application to try push notification!
 
