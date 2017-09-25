@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ryosan470.push_notify_test">
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"></uses-permission>
+    <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+    <uses-permission android:name="ryosan470.push_notify_test.permission.C2D_MESSAGE"></uses-permission>
+    <permission
+        android:name="ryosan470.push_notify_test.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,11 +26,30 @@
         </activity>
 
         <service
-            android:name=".MyFirebaseInstanceIDService">
+            android:name="com.growthpush.TokenRefreshService"
+            android:exported="false">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
             </intent-filter>
         </service>
+        <service android:name="com.growthpush.RegistrationIntentService"/>
+        <service
+            android:name="com.growthpush.ReceiverService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="ryosan-470.push_notify_test" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

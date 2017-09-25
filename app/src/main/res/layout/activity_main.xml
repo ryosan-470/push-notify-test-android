@@ -8,29 +8,9 @@
     android:paddingRight="16dp"
     tools:context="ryosan470.push_notify_test.MainActivity">
 
-    <Button
-        android:id="@+id/get_device_token_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="get device token" />
-
-    <Button
-        android:id="@+id/subscribe_topic_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Subscribe a topic" />
-
-    <Button
-        android:id="@+id/unsubscribe_topic_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Unsubscribe a topic" />
-
     <TextView
         android:id="@+id/device_token_view"
         android:layout_width="356dp"
-        android:layout_height="114dp"
-        android:text="@string/device_token" />
+        android:layout_height="72dp"
+        android:text="@string/message" />
 </LinearLayout>
