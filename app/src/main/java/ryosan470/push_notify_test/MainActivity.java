@@ -34,5 +34,25 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, String.format("clientId is %s", client.getId()));
             }
         }).start();
+
+        Button getDeviceTokenButton = (Button) findViewById(R.id.get_device_token_button);
+        getDeviceTokenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        final String token = GrowthPush.getInstance().registerGCM(getApplicationContext());
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                TextView textView = (TextView) findViewById(R.id.device_token_view);
+                                textView.setText(token);
+                            }
+                        });
+                    }
+                }).start();
+            }
+        });
     }
 }
