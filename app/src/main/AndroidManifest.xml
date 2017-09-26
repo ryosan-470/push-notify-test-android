@@ -46,7 +46,7 @@
             android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <category android:name="ryosan-470.push_notify_test" />
+                <category android:name="ryosan470.push_notify_test" />
             </intent-filter>
         </receiver>
 

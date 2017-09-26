@@ -12,7 +12,7 @@ import com.growthpush.GrowthPush;
 import com.growthpush.model.Environment;
 
 public class MainActivity extends AppCompatActivity {
-    private final static String TAG = "MainActivity";
+    private final static String TAG = "GrowthPush_MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Client client = Growthbeat.getInstance().waitClient();
-                Log.d("GrowthbeatSample", String.format("clientId is %s", client.getId()));
+                Log.d(TAG, String.format("clientId is %s", client.getId()));
             }
         }).start();
     }
