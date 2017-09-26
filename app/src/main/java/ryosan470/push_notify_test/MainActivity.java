@@ -23,9 +23,12 @@ public class MainActivity extends AppCompatActivity {
         final String GROWTH_PUSH_CREDENTIAL_ID = getString(R.string.GrowthPush_CREDENTIAL_ID);
         final String FIREBASE_SENDER_ID = getString(R.string.Firebase_SENDER_ID);
 
-        GrowthPush.getInstance().initialize(getApplicationContext(), GROWTH_PUSH_APPLICATION_ID, GROWTH_PUSH_CREDENTIAL_ID, Environment.production);
-        GrowthPush.getInstance().requestRegistrationId(FIREBASE_SENDER_ID);
-        GrowthPush.getInstance().trackEvent("Launch"); // 起動時をイベントとして登録する
+        final GrowthPush growthPushInstance = GrowthPush.getInstance();
+
+        growthPushInstance.initialize(getApplicationContext(), GROWTH_PUSH_APPLICATION_ID, GROWTH_PUSH_CREDENTIAL_ID, Environment.production);
+        Log.d(TAG, "Send device token");
+        growthPushInstance.requestRegistrationId(FIREBASE_SENDER_ID);
+        growthPushInstance.trackEvent("Launch"); // 起動時をイベントとして登録する
 
         new Thread(new Runnable() {
             @Override
@@ -39,10 +42,11 @@ public class MainActivity extends AppCompatActivity {
         getDeviceTokenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                growthPushInstance.setTag("getDeviceTokenButton");
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        final String token = GrowthPush.getInstance().registerGCM(getApplicationContext());
+                        final String token = growthPushInstance.registerGCM(getApplicationContext());
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
