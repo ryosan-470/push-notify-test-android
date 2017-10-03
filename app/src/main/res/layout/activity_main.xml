@@ -14,6 +14,12 @@
         android:layout_height="wrap_content"
         android:text="get device token" />
 
+    <TextView
+        android:id="@+id/device_token_view"
+        android:layout_width="356dp"
+        android:layout_height="114dp"
+        android:text="@string/device_token" />
+
     <Button
         android:id="@+id/subscribe_topic_button"
         android:layout_width="match_parent"
@@ -29,8 +35,8 @@
         android:text="Unsubscribe a topic" />
 
     <TextView
-        android:id="@+id/device_token_view"
-        android:layout_width="356dp"
-        android:layout_height="114dp"
-        android:text="@string/device_token" />
+        android:id="@+id/is_subscribed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/is_subscribed_topic" />
 </LinearLayout>

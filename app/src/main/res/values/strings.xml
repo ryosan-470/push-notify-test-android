@@ -3,4 +3,5 @@
     <string name="device_token">A device token does not exist.</string>
     <string name="msg_subscribed">A news topic is subscribed.</string>
     <string name="msg_unsubscribed">A news topic is unsubscribed.</string>
+    <string name="is_subscribed_topic">A news topic is NOT subscribed.</string>
 </resources>

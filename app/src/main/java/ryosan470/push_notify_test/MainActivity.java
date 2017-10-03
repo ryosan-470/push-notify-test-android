@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
                 String msg = getString(R.string.msg_subscribed);
                 Log.d(TAG, msg);
                 Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                TextView textView = (TextView) findViewById(R.id.is_subscribed);
+                textView.setText(msg);
             }
         });
 
@@ -55,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                 String msg = getString(R.string.msg_unsubscribed);
                 Log.d(TAG, msg);
                 Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                TextView textView = (TextView) findViewById(R.id.is_subscribed);
+                textView.setText(msg);
             }
         });
     }
